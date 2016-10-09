@@ -159,6 +159,7 @@ class View1 extends Component {
 
 //this.props.navigator.push(routes[1]);
 
+
 class View2 extends Component {
   render() {
     console.log(myImage)
@@ -166,7 +167,8 @@ class View2 extends Component {
       <View style={{flex: 1}}>
         <Image source={{uri: myImage}} style={styles.icon}/>
         <Text style={styles.infoBoxText}>
-          This is a water bottle. People use water bottles to drink water. Sometimes they will drink juice too.
+          MHacks is a 36-hour hackathon hosted by University of Michigan students.
+Participants (“hackers”) spend 36 hours working in teams of 1 - 4 people to build or code projects (“hacks”) they’re excited about. There are workshops, mentors, food, swag, and buckets of coffee to guide you along the way.
         </Text>
       </View>
     )
