@@ -92,7 +92,6 @@ var styles = StyleSheet.create({
   },
   infoBox: {
     flex: 3,
-    top: 100,
     backgroundColor: 'white',
   },
   infoBoxText: {

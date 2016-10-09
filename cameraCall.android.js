@@ -116,7 +116,7 @@ class View1 extends Component {
     this.camera.capture()
       .then(data => {
         myImage = data.path
-        this.props.navigator.push({title: 'renderImage', index: 2});
+        this.props.navigator.push({title: 'renderImage', index: 1});
 
         Blob.build(RNFetchBlob.wrap(data.path), { type : 'image/jpg' })
           .then(blob => {
@@ -148,6 +148,14 @@ class View1 extends Component {
 //https://www.wolframcloud.com/objects/user-dafc6a4b-5be6-4695-a653-5d3b4876a78c/ImageAPI?url=file:///storage/emulated/0/DCIM/IMG_20161008_220355.jpg
 // ImageIdentify[$Failed]
 
+        // <TouchableHighlight style={ styles.confirmButton } onPress={this._onConfirm}>
+        //   <Image>
+        //     source={require('./img/confirm.png')}
+        //   </Image>
+        // </TouchableHighlight>
+        // <TouchableHighlight style={ styles.declineButton } onPress={this._onDecline}>
+        //   <Image source={require('./img/decline.png')} />
+        // </TouchableHighlight>
 
 //this.props.navigator.push(routes[1]);
 
@@ -157,8 +165,21 @@ class View2 extends Component {
     return (
       <View style={{flex: 1}}>
         <Image source={{uri: myImage}} style={styles.icon}/>
+        <Text style={styles.infoBoxText}>
+          This is a water bottle. People use water bottles to drink water. Sometimes they will drink juice too.
+        </Text>
       </View>
     )
+  }
+
+  _onDecline() {
+    console.log(this)
+    console.log(this.props)
+    this.props.navigator.pop()
+  }
+
+  _onConfirm() {
+    this.props.navigator.push({title: 'renderImage', index: 2});
   }
 }
 
@@ -200,5 +221,26 @@ const styles = StyleSheet.create({
     backgroundColor:'rgba(75, 115, 227,0.25)',
     height: 100,
     width: Dimensions.get('window').width
+  },
+  confirmButton: {
+    flex: 1,
+    position: 'absolute',
+    height: 75,
+    width: 75,
+    right: 90,
+    bottom: 75,
+  },
+  declineButton: {
+    flex: 1,
+    position: 'absolute',
+    height: 75,
+    width: 75,
+    left: 90,
+    bottom: 75,
+  },
+  infoBoxText: {
+    padding: 10,
+    fontSize: 20,
+    justifyContent: 'center'
   }
 });
