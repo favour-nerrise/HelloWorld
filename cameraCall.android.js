@@ -130,6 +130,8 @@ class View1 extends Component {
 
         Blob.build(RNFetchBlob.wrap(data.path), { type : 'image/jpg' })
           .then(blob => {
+
+
             firebase.storage()
                   .ref('rn-firebase-upload')
                   .child(testImageName)
@@ -140,19 +142,11 @@ class View1 extends Component {
                   .catch(err => console.error(err));
                 }
           )
-          .then((snapshot) => {
-            firebase
-              .storage()
-              .ref('rn-firebase-upload/' + testImageName)
-              .getDownloadURL().then((url) => {
-                console.log(url)
-              })
-              .catch(err => console.error(err));
-          })
-          .catch(err => console.error(err));
-
+          .then(snapshot => {
+            console.log(snapshot)
       })
       .catch(err => console.error(err));
+    })
   }
 
 }
