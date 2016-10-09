@@ -14,6 +14,7 @@ import Camera from 'react-native-camera';
 import Button from 'react-native-button';
 import RNFetchBlob from 'react-native-fetch-blob'
 import firebase from 'firebase'
+import Results from './results.js'
 
 const testImageName = "firstchild"
 const prefix = 'file://'
@@ -50,7 +51,7 @@ RNFetchBlob
   .fetch('GET', 'https://avatars0.githubusercontent.com/u/5063785?v=3&s=460')
   .then((resp) => {
     testFile = resp.path()
-    console.log('whaaaaaatttt')
+    console.log(resp.path())
     return(
       <Image
         style={{ height : 256, width : 256, alignSelf : 'center' }}
@@ -58,20 +59,6 @@ RNFetchBlob
     )
   })
   .catch(err => console.error(err));
-
-// rnfbURI = RNFetchBlob.wrap(testFile)
-//   // create Blob from file path
-// Blob.build(rnfbURI, { type : 'image/png;'})
-//     .then((blob) => {
-//       // upload image using Firebase SDK
-//       firebase.storage()
-//         .ref('rn-firebase-upload')
-//         .child(testImageName)
-//         .put(blob, { contentType : 'image/png' })
-//         .then((snapshot) => {
-//           console.log(snapshot)
-//         })
-//         .catch(err => console.error(err));
 
 const routes = [
   {title: 'cameraCall', index: 0},
@@ -88,6 +75,9 @@ export default class MyScene extends Component {
         break;
       case 1:
         return <View2 navigator={this.props.navigator} data={this.props.data} />;
+        break;
+      case 2:
+        return <Results navigator={this.props.navigator} data={this.props.data} myImage={myImage} />;
         break;
     }
   }
@@ -126,7 +116,7 @@ class View1 extends Component {
     this.camera.capture()
       .then(data => {
         myImage = data.path
-        this.props.navigator.push({title: 'renderImage', index: 1});
+        this.props.navigator.push({title: 'renderImage', index: 2});
 
         Blob.build(RNFetchBlob.wrap(data.path), { type : 'image/jpg' })
           .then(blob => {

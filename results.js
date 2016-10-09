@@ -17,9 +17,8 @@ var sentenceEnd = originalText.indexOf('.');
 export default class Results extends Component {
   static propTypes = {
     title: PropTypes.string.isRequired,
-    onForward: PropTypes.func.isRequired,
-    onBack: PropTypes.func.isRequired,
   }
+
   _handlePress() {
     Linking.openURL("https://google.ca").catch(err => console.error('An error occurred', err));
   }
@@ -34,7 +33,7 @@ export default class Results extends Component {
             <Content>
               <View style={{flex: 1 }} >
                 <View style={{flex: 5}} >
-                  <Image style={styles.image} source={require('./img/unionrail.jpg')} />
+                  <Image style={styles.image} source={{uri: myImage}} />
                     <View style={[styles.overlay, { height: 100}]} >
                       <Text style={styles.overlayText} >
                         {obj}
