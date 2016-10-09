@@ -1,0 +1,4 @@
+react-native start > /dev/null 2>&1 &
+curl "http://localhost:8081/index.android.bundle?platform=android" -o "android/app/src/main/assets/index.android.bundle"
+(cd android/ && ./gradlew assembleDebug)
+adb install android/app/build/outputs/apk/app-debug.apk

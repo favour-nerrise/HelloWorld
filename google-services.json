@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "659689812618",
+    "firebase_url": "https://helloworld-12750.firebaseio.com",
+    "project_id": "helloworld-12750",
+    "storage_bucket": "helloworld-12750.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:659689812618:android:de9c181fe700dc67",
+        "android_client_info": {
+          "package_name": "com.superproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "659689812618-3fck9n7m2678qq66nv1negr1euo2ruro.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCf9SdbKG8QE3MOhDBnP2sqw-hSSIwU46Q"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "SuperProject",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "build": "(cd android/ && ./gradlew assembleDebug)",
+    "bundle-android": "react-native bundle --platform android --dev false --entry-file index.android.js --bundle-output android/app/src/main/assets/index.android.bundle --sourcemap-output android/app/src/main/assets/index.android.map --assets-dest android/app/src/main/res/"
+  },
+  "dependencies": {
+    "firebase": "^3.4.1",
+    "react": "15.3.2",
+    "react-native": "0.34.1",
+    "react-native-android-permissions": "0.0.7",
+    "react-native-button": "^1.7.1",
+    "react-native-camera": "git+https://github.com/lwansbrough/react-native-camera.git",
+    "react-native-camera-android": "^1.0.7",
+    "react-native-fetch-blob": "^0.9.6"
+  }
+}
