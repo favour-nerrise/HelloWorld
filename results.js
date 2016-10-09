@@ -15,9 +15,6 @@ var sentenceEnd = originalText.indexOf('.');
 
 
 export default class Results extends Component {
-  static propTypes = {
-    title: PropTypes.string.isRequired,
-  }
 
   _handlePress() {
     Linking.openURL("https://google.ca").catch(err => console.error('An error occurred', err));
